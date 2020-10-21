@@ -19,24 +19,59 @@ namespace WindowsFormsApp1
 
         private void salir(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
+        
         private void limparDatos(object sender, EventArgs e)
+        {
+            Limpiar limpiar = new Limpiar();
+            limpiar.BorrarCampos(this, groupBox1, this, groupBox2);
+        }
+       
+        // metodos Codificador
+        private void textCodificar(object sender, EventArgs e)
         {
 
         }
+         private void letrapista1(object sender, EventArgs e)
+        {
+
+        }
+         private void buttonCodificar(object sender, EventArgs e)
+        {
+
+        }
+
+         private void datosCodificados(object sender, EventArgs e)
+        {
+
+        }
+
+        // metodos Decodificar
+
+        private void textDecodificar(object sender, EventArgs e)
+        {
+
+        }
+      
+        private void buttonDecodificar(object sender, EventArgs e)
+        {
+
+        }
+        private void letrapista2(object sender, EventArgs e)
+        {
+
+        }
+         private void datosDecodificados(object sender, EventArgs e)
+        {
+
+        }
+        // pantilla 
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -50,19 +85,9 @@ namespace WindowsFormsApp1
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
         {
 
         }
@@ -75,39 +100,14 @@ namespace WindowsFormsApp1
         private void label6_Click(object sender, EventArgs e)
         {
 
-        }
+        }      
 
-        private void textDecodificar_TextChanged(object sender, EventArgs e)
+        private void comboBox1(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonCodificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonDecodificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void datosCodificados_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textDecodificar_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox2(object sender, EventArgs e)
         {
 
         }

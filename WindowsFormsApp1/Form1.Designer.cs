@@ -5,7 +5,7 @@
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Limpiar los recursos que se estén usando.
@@ -34,7 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.datosCodificados = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textDecodificar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.datosDecodificados = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -42,10 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.datosCodificados = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textDecodificar = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.buttonCodificar.TabIndex = 2;
             this.buttonCodificar.Text = "Cifrar Datos";
             this.buttonCodificar.UseVisualStyleBackColor = false;
-            this.buttonCodificar.Click += new System.EventHandler(this.buttonCodificar_Click);
+            this.buttonCodificar.Click += new System.EventHandler(this.buttonCodificar);
             // 
             // textCodificar
             // 
@@ -69,7 +69,7 @@
             this.textCodificar.Name = "textCodificar";
             this.textCodificar.Size = new System.Drawing.Size(232, 26);
             this.textCodificar.TabIndex = 3;
-            this.textCodificar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textCodificar.TextChanged += new System.EventHandler(this.textCodificar);
             // 
             // label1
             // 
@@ -129,7 +129,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(232, 25);
             this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.letrapista1);
             // 
             // groupBox1
             // 
@@ -150,6 +150,26 @@
             this.groupBox1.Text = "Codificador";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(50, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 19);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Datos Codificados";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // datosCodificados
+            // 
+            this.datosCodificados.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datosCodificados.Location = new System.Drawing.Point(49, 291);
+            this.datosCodificados.Name = "datosCodificados";
+            this.datosCodificados.Size = new System.Drawing.Size(232, 26);
+            this.datosCodificados.TabIndex = 8;
+            this.datosCodificados.TextChanged += new System.EventHandler(this.datosCodificados);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.LightGray;
@@ -168,6 +188,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Decodificador";
             // 
+            // textDecodificar
+            // 
+            this.textDecodificar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDecodificar.Location = new System.Drawing.Point(58, 71);
+            this.textDecodificar.Name = "textDecodificar";
+            this.textDecodificar.Size = new System.Drawing.Size(232, 26);
+            this.textDecodificar.TabIndex = 10;
+            this.textDecodificar.TextChanged += new System.EventHandler(this.textDecodificar);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(54, 251);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(159, 19);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Datos Decodificados";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -185,7 +225,7 @@
             this.datosDecodificados.Name = "datosDecodificados";
             this.datosDecodificados.Size = new System.Drawing.Size(232, 26);
             this.datosDecodificados.TabIndex = 3;
-            this.datosDecodificados.TextChanged += new System.EventHandler(this.textDecodificar_TextChanged);
+            this.datosDecodificados.TextChanged += new System.EventHandler(this.datosDecodificados);
             // 
             // comboBox2
             // 
@@ -223,7 +263,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(232, 25);
             this.comboBox2.TabIndex = 7;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.letrapista2);
             // 
             // buttonDecodificar
             // 
@@ -235,7 +275,7 @@
             this.buttonDecodificar.TabIndex = 2;
             this.buttonDecodificar.Text = "Decodificar";
             this.buttonDecodificar.UseVisualStyleBackColor = false;
-            this.buttonDecodificar.Click += new System.EventHandler(this.buttonDecodificar_Click);
+            this.buttonDecodificar.Click += new System.EventHandler(this.buttonDecodificar);
             // 
             // label4
             // 
@@ -271,46 +311,6 @@
             this.buttonLimpiar.UseVisualStyleBackColor = false;
             this.buttonLimpiar.Click += new System.EventHandler(this.limparDatos);
             // 
-            // datosCodificados
-            // 
-            this.datosCodificados.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datosCodificados.Location = new System.Drawing.Point(49, 291);
-            this.datosCodificados.Name = "datosCodificados";
-            this.datosCodificados.Size = new System.Drawing.Size(232, 26);
-            this.datosCodificados.TabIndex = 8;
-            this.datosCodificados.TextChanged += new System.EventHandler(this.datosCodificados_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 19);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Datos Codificados";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(54, 251);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 19);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Datos Decodificados";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textDecodificar
-            // 
-            this.textDecodificar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDecodificar.Location = new System.Drawing.Point(58, 71);
-            this.textDecodificar.Name = "textDecodificar";
-            this.textDecodificar.Size = new System.Drawing.Size(232, 26);
-            this.textDecodificar.TabIndex = 10;
-            this.textDecodificar.TextChanged += new System.EventHandler(this.textDecodificar_TextChanged_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,26 +332,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Salir;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonCodificar;
-        private System.Windows.Forms.TextBox textCodificar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox datosDecodificados;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button buttonDecodificar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonSalir;
-        private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox datosCodificados;
-        private System.Windows.Forms.TextBox textDecodificar;
-        private System.Windows.Forms.Label label6;
+         System.Windows.Forms.Button Salir;
+         System.Windows.Forms.Button button2;
+         System.Windows.Forms.Button buttonCodificar;
+         System.Windows.Forms.TextBox textCodificar;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.ComboBox comboBox1;
+         System.Windows.Forms.GroupBox groupBox1;
+         System.Windows.Forms.GroupBox groupBox2;
+         System.Windows.Forms.Label label3;
+         System.Windows.Forms.TextBox datosDecodificados;
+         System.Windows.Forms.ComboBox comboBox2;
+         System.Windows.Forms.Button buttonDecodificar;
+         System.Windows.Forms.Label label4;
+         System.Windows.Forms.Button buttonSalir;
+         System.Windows.Forms.Button buttonLimpiar;
+         System.Windows.Forms.Label label5;
+         System.Windows.Forms.TextBox datosCodificados;
+         System.Windows.Forms.TextBox textDecodificar;
+         System.Windows.Forms.Label label6;
     }
 }
 
