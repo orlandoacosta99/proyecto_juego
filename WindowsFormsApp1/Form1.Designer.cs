@@ -36,21 +36,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.letrapista1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textSindecimal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.datosCodificados = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textDecodificar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.datosDecodificados = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.buttonDecodificar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();            
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // buttonSalir
+            // 
+            this.buttonSalir.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonSalir.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalir.Location = new System.Drawing.Point(32, 12);
+            this.buttonSalir.Name = "buttonSalir";
+            this.buttonSalir.Size = new System.Drawing.Size(100, 35);
+            this.buttonSalir.TabIndex = 8;
+            this.buttonSalir.Text = "Salir";
+            this.buttonSalir.UseVisualStyleBackColor = false;
+            this.buttonSalir.Click += new System.EventHandler(this.salir);
+            // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonLimpiar.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiar.Location = new System.Drawing.Point(148, 12);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(134, 35);
+            this.buttonLimpiar.TabIndex = 11;
+            this.buttonLimpiar.Text = "Limpiar Datos";
+            this.buttonLimpiar.UseVisualStyleBackColor = false;
+            this.buttonLimpiar.Click += new System.EventHandler(this.limparDatos);
             // 
             // buttonCodificar
             // 
@@ -136,10 +157,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightGray;
-            this.groupBox1.Controls.Add(this.textSindecimal);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.datosCodificados);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textCodificar);
             this.groupBox1.Controls.Add(this.letrapista1);
@@ -154,15 +173,6 @@
             this.groupBox1.Text = "Codificador";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
-            // textSindecimal
-            // 
-            this.textSindecimal.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSindecimal.Location = new System.Drawing.Point(49, 364);
-            this.textSindecimal.Name = "textSindecimal";
-            this.textSindecimal.Size = new System.Drawing.Size(232, 26);
-            this.textSindecimal.TabIndex = 11;
-            this.textSindecimal.TextChanged += new System.EventHandler(this.textSindecimal_TextChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -172,7 +182,7 @@
             this.label7.Size = new System.Drawing.Size(230, 19);
             this.label7.TabIndex = 10;
             this.label7.Text = "Datos Codificados sin decimal";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Click += new System.EventHandler(this.labelCodificados_decimal);
             // 
             // label5
             // 
@@ -183,16 +193,7 @@
             this.label5.Size = new System.Drawing.Size(141, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Datos Codificados";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // datosCodificados
-            // 
-            this.datosCodificados.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datosCodificados.Location = new System.Drawing.Point(49, 291);
-            this.datosCodificados.Name = "datosCodificados";
-            this.datosCodificados.Size = new System.Drawing.Size(232, 26);
-            this.datosCodificados.TabIndex = 8;
-            this.datosCodificados.TextChanged += new System.EventHandler(this.datosCodificados_TextChanged);
+            this.label5.Click += new System.EventHandler(this.labeldatosCodificados);
             // 
             // groupBox2
             // 
@@ -200,7 +201,6 @@
             this.groupBox2.Controls.Add(this.textDecodificar);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.datosDecodificados);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.buttonDecodificar);
             this.groupBox2.Controls.Add(this.label4);
@@ -218,8 +218,8 @@
             this.textDecodificar.Location = new System.Drawing.Point(58, 71);
             this.textDecodificar.Name = "textDecodificar";
             this.textDecodificar.Size = new System.Drawing.Size(232, 26);
-            this.textDecodificar.TabIndex = 10;
-            this.textDecodificar.TextChanged += new System.EventHandler(this.textDecodificados_TextChanged);
+            this.textDecodificar.TabIndex = 0;
+            this.textDecodificar.TextChanged += new System.EventHandler(this.textDecodificar_TextChanged);
             // 
             // label6
             // 
@@ -230,7 +230,7 @@
             this.label6.Size = new System.Drawing.Size(159, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Datos Decodificados";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Click += new System.EventHandler(this.labelDecodificados);
             // 
             // label3
             // 
@@ -241,15 +241,6 @@
             this.label3.Size = new System.Drawing.Size(112, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Código Cifrado";
-            // 
-            // datosDecodificados
-            // 
-            this.datosDecodificados.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datosDecodificados.Location = new System.Drawing.Point(58, 291);
-            this.datosDecodificados.Name = "datosDecodificados";
-            this.datosDecodificados.Size = new System.Drawing.Size(232, 26);
-            this.datosDecodificados.TabIndex = 3;
-            this.datosDecodificados.TextChanged += new System.EventHandler(this.textDecodificar_TextChanged);
             // 
             // comboBox2
             // 
@@ -311,30 +302,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Letra Pista";
             // 
-            // buttonSalir
-            // 
-            this.buttonSalir.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonSalir.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalir.Location = new System.Drawing.Point(32, 12);
-            this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(100, 35);
-            this.buttonSalir.TabIndex = 8;
-            this.buttonSalir.Text = "Salir";
-            this.buttonSalir.UseVisualStyleBackColor = false;
-            this.buttonSalir.Click += new System.EventHandler(this.salir);
-            // 
-            // buttonLimpiar
-            // 
-            this.buttonLimpiar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonLimpiar.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLimpiar.Location = new System.Drawing.Point(148, 12);
-            this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(134, 35);
-            this.buttonLimpiar.TabIndex = 11;
-            this.buttonLimpiar.Text = "Limpiar Datos";
-            this.buttonLimpiar.UseVisualStyleBackColor = false;
-            this.buttonLimpiar.Click += new System.EventHandler(this.limparDatos);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,16 +333,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox datosDecodificados;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button buttonDecodificar;
         private System.Windows.Forms.Label label4;       
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox datosCodificados;
         private System.Windows.Forms.TextBox textDecodificar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textSindecimal;
     }
 }
 
